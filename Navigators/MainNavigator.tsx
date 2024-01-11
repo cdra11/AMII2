@@ -26,10 +26,12 @@ const Drawer = createDrawerNavigator();
 
 function MyDrawer() {
   return (
-    <Drawer.Navigator>
-        <Drawer.Screen name="Welcome" component={WelcomeScreen} />
+    <Drawer.Navigator initialRouteName='Login'>
+        <Drawer.Screen name="Login" component={LoginScreen} />
         <Drawer.Screen name="General" component={GeneralScreen} />
-        <Drawer.Screen name='Recursos' component={RecursosScreen}/>
+        <Drawer.Screen name="Recursos" component={RecursosScreen}/>
+        <Drawer.Screen name="Welcome" component={WelcomeScreen} />
+        <Drawer.Screen name="Registro" component={RegistroScreen} />
     </Drawer.Navigator>
   );
 }
@@ -37,7 +39,7 @@ function MyDrawer() {
 export default function MainNavigator(){
     return(
         <NavigationContainer>
-            <MyStack/>
+            <MyDrawer/>
         </NavigationContainer>
     )
 }
